@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>FUBIS</title>
+	</head>
+	<body>
+		<h1 id="headline" data-variant-a="Fuck you buddy, I'm shipping" data-variant-b="Fine, you're based. I suppose"></h1>
+		<script>
+			// 50/50 randomizer: choose between variant A and B each page load
+			(function() {
+				const el = document.getElementById('headline');
+				if (!el) return;
+				const a = el.getAttribute('data-variant-a');
+				const b = el.getAttribute('data-variant-b');
+				// Math.random() returns [0,1); < 0.5 ~ 50% probability
+				el.textContent = Math.random() < 0.5 ? a : b;
+			})();
+		</script>
+		<noscript>
+			<p>Fuck you buddy, I'm shipping</p>
+		</noscript>
+	</body>
+</html>
